@@ -1,10 +1,6 @@
 package ui;
 
-
-import data.TelefonBook;
 import data.TriggerSearch;
-import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import javafx.scene.Node;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
@@ -27,7 +23,8 @@ public class SearchArea {
 
         anchorPane.getChildren().addAll(searchTextField, searchButton);
 
-        searchButton.onActionProperty().setValue(actionEvent -> triggerSearch.search(searchTextField.textProperty().getValue()));
+        searchButton.onActionProperty().setValue(actionEvent ->
+                triggerSearch.search(searchTextField.textProperty().getValue()));
     }
 
     public Node getPane() {

@@ -3,6 +3,7 @@ package ui;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.scene.Node;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.AnchorPane;
@@ -127,5 +128,8 @@ public class EntryArea {
 
     private static TelefonEntry getCurrentRow(TableColumn.CellEditEvent<TelefonEntry, String> t) {
         return t.getTableView().getItems().get(t.getTablePosition().getRow());
+    }
+    public Node getPane() {
+        return anchorPane;
     }
 }

@@ -52,4 +52,11 @@ public class TelefonEntry {
     public boolean isNew() {
         return isNew;
     }
+
+    public boolean contains (String searchTerm){
+        return lastName.get().contains(searchTerm)
+                || firstName.get().contains(searchTerm)
+                || number.get().contains(searchTerm);
+    }
+
 }

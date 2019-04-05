@@ -15,15 +15,16 @@ public class Main extends Application {
 
         TelefonBook telefonBook = new TelefonBook();
 
-        BorderPane root = new BorderPane();
-
         EntryArea entryArea = new EntryArea(telefonBook.getNumbers());
-
         SearchArea searchArea = new SearchArea(value -> entryArea.setItems(telefonBook.search(value)));
+        DeleteArea deleteArea = new DeleteArea(() -> telefonBook.delete(entryArea.getSelectedEntries()));
+
+
+        BorderPane root = new BorderPane();
         root.setTop(searchArea.getPane());
+        root.setCenter(entryArea.getPane());
+        root.setBottom(deleteArea.getPane());
 
-
-        root.setCenter(entryArea.getAnchorPane());
 
         primaryStage.setTitle("Hello World");
         primaryStage.setScene(new Scene(root, 300, 275));
