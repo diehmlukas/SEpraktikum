@@ -27,4 +27,8 @@ public class TelefonBook {
     public void delete(ObservableList<TelefonEntry> entries) {
         observableList.removeAll(entries);
     }
+
+    public void add(ObservableList<TelefonEntry> entries) {
+        observableList.addAll(entries);
+    }
 }
